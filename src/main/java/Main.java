@@ -9,7 +9,7 @@ public class Main {
         Formula formula = new Formula();
         Scanner teclado = new Scanner(System.in);
 
-        System.out.printf("Selecione pais");
+        System.out.println("Selecione pais");
         System.out.println("1.- Argentina");
         System.out.println("2.- Peru");
         System.out.println("3.- Bolivia");
@@ -20,22 +20,21 @@ public class Main {
             case 1:
                 System.out.println("Ingrese nota ");
                 nota = teclado.nextDouble();
-                formula.formulaArgentina(nota);
+
                 System.out.println(formula.formulaArgentina(nota));
                 break;
 
             case 2:
                 System.out.println("Ingrese nota ");
                 nota = teclado.nextDouble();
-                formula.formulaPeruana(nota);
+
                 System.out.println(formula.formulaPeruana(nota));
                 break;
 
             case 3:
                 System.out.println("Ingrese nota ");
-
                 nota = teclado.nextDouble();
-                formula.formulaBoliviana(nota);
+
                 System.out.println(formula.formulaBoliviana(nota));
                 break;
         }
