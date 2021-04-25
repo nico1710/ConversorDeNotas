@@ -2,8 +2,8 @@ public class Formula {
 
     public double formulaPeruana(double x){
 
-        double convercionChilena = (x-11)*3/9 + 4;
-
+        double convercionChilena;
+        convercionChilena = (x-11)*3/9 + 4;
         return convercionChilena;
 
     }
