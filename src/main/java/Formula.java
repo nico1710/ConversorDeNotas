@@ -3,15 +3,15 @@ public class Formula {
     private double nota;
     private int num1;
     private double denominador;
-    private double convercionChilena;
     private double resultado;
+    private Pais pais;
 
     public Formula(){}
 
-    public Formula(double nota, int num1, double denominador){
+    public Formula(double nota, Pais pais){
         this.nota = nota;
-        this.num1 = num1;
-        this.denominador = denominador;
+        this.num1 = pais.getNumeroFormula();
+        this.denominador = pais.getDividendo();
     }
     //obtener la nota que se ingresa por consola
     public double getNota() {
