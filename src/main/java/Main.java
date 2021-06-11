@@ -1,29 +1,38 @@
 import java.util.*;
 
 public class Main {
-
-
     public static void main(String[] args){
-        int paisSeleccionado, repetirConversion = 0;
+        int paisSeleccionado, paisOrigen, repetirConversion = 0;
 
         Scanner teclado = new Scanner(System.in);
         Menu menuPrincipal = new Menu();
 
         do{
-            System.out.println("Seleccione Pais de Origen");
-            menuPrincipal.seleccionPais();
+            try {
+                System.out.println("-- CONVERSOR DE NOTAS 1.1 --");
+                System.out.println("Ingrese Pais de origen: ");
+                menuPrincipal.seleccionPais();
+                paisOrigen = teclado.nextInt();
+                menuPrincipal.setPaisOrigen(paisOrigen);
 
-            menuPrincipal.ingresarNota();
-            menuPrincipal.seleccionPais();
+                menuPrincipal.ingresarNota();
 
-            paisSeleccionado = teclado.nextInt();
-            menuPrincipal.setPaisElejido(paisSeleccionado);
-            menuPrincipal.mostrarResultado();
+                System.out.println("Ingrese Pais al que dease convertir la nota: ");
+                menuPrincipal.seleccionPais();
+                paisSeleccionado = teclado.nextInt();
+                menuPrincipal.setPaisElegido(paisSeleccionado);
 
-            System.out.println("Desea calcular otra nota: ");
-            System.out.println("1. Convertir otra nota");
-            System.out.println("2. Salir");
-            repetirConversion = teclado.nextInt();
+                menuPrincipal.mostrarResultado();
+
+            }catch (InputMismatchException in) {
+                System.out.println("ERROR | No puede ingresar letras o caracteres!!!\n");
+                teclado.next();
+            }finally {
+                System.out.println("Desea calcular otra nota: ");
+                System.out.println("1. Convertir otra nota");
+                System.out.println("2. Salir");
+                repetirConversion = teclado.nextInt();
+            }
 
         }while(repetirConversion < 2);
     }

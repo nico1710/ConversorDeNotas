@@ -1,17 +1,23 @@
 public enum Pais {
-    ARGENTINA("Argentina", 6, 4),
-    PERU("Peru", 11, 9),
-    BRASIL("Brasil", 5, 5),
-    ECUADOR("Ecuador", 3, 5);
+    CHILE("Chile", 0, 0, 1, 7),
+    ARGENTINA("Argentina", 6, 4,1, 10),
+    PERU("Peru", 11, 9, 1, 20),
+    BRASIL("Brasil", 5, 5, 1, 10),
+    ECUADOR("Ecuador", 3, 5, 1, 10),
+    BOLIVIA("Bolivia", 50, 50,1, 100);
 
     private String nombrePais;
     private int numeroFormula;
     private int dividendo;
+    private int notaMinima;
+    private int notaMaxima;
 
-    Pais(String nombrePais, int numeroFormula, int dividendo) {
+    Pais(String nombrePais, int numeroFormula, int dividendo, int notaMinima, int notaMaxima) {
         this.nombrePais = nombrePais;
         this.numeroFormula = numeroFormula;
         this.dividendo = dividendo;
+        this.notaMinima = notaMinima;
+        this.notaMaxima = notaMaxima;
     }
 
     public String getNombrePais() {
@@ -25,4 +31,8 @@ public enum Pais {
     public int getDividendo() {
         return dividendo;
     }
+
+    public int getNotaMinima() { return notaMinima; }
+
+    public int getNotaMaxima() { return notaMaxima; }
 }

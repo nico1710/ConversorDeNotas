@@ -1,17 +1,20 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
     private double nota;
     private Pais paisElejido;
+    private Pais paisOrigen;
     private Formula calculoNota;
 
     public Menu() {}
 
     public void ingresarNota() {
         Scanner teclado = new Scanner(System.in);
-        System.out.println("-- CONVERSOR DE NOTAS 1.1 --");
-        System.out.println("Ingrese Nota: ");
-        this.nota = teclado.nextDouble();
+        do {
+            System.out.println("Ingrese Nota de " + paisOrigen.getNombrePais() + ": ");
+            this.nota = teclado.nextDouble();
+        }while(nota < paisOrigen.getNotaMinima() || nota > paisOrigen.getNotaMaxima());
     }
     public void seleccionPais() {
         int contador = 0;
@@ -20,31 +23,72 @@ public class Menu {
             contador++;
         }
     }
-
-    public void setPaisElejido(int opcion) {
+    public void setPaisOrigen(int opcion) {
         switch (opcion) {
             case 1:
-                paisElejido = Pais.ARGENTINA;
+                paisOrigen = Pais.CHILE;
                 break;
             case 2:
-                paisElejido = Pais.PERU;
+                paisOrigen = Pais.ARGENTINA;
                 break;
             case 3:
-                paisElejido = Pais.BRASIL;
+                paisOrigen = Pais.PERU;
                 break;
             case 4:
+                paisOrigen = Pais.BRASIL;
+                break;
+            case 5:
+                paisOrigen = Pais.ECUADOR;
+                break;
+            case 6:
+                paisOrigen = Pais.BOLIVIA;
+                break;
+        }
+    }
+
+    public void setPaisElegido(int opcion) {
+        switch (opcion) {
+            case 1:
+                paisElejido = Pais.CHILE;
+                break;
+            case 2:
+                paisElejido = Pais.ARGENTINA;
+                break;
+            case 3:
+                paisElejido = Pais.PERU;
+                break;
+            case 4:
+                paisElejido = Pais.BRASIL;
+                break;
+            case 5:
                 paisElejido = Pais.ECUADOR;
+                break;
+            case 6:
+                paisElejido = Pais.BOLIVIA;
                 break;
         }
     }
 
     public void mostrarResultado() {
-        calculoNota = new Formula(nota, paisElejido);
-        calculoNota.crearFormula();
+        if(paisOrigen == paisElejido) {
+            System.out.println("La nota es la Misma..!!!");
+        }else {
+            if(paisOrigen != Pais.CHILE) {
+                calculoNota = new Formula(nota, paisOrigen);
+                calculoNota.crearFormulaPaisOrigenAChilena();
+            }else {
+                calculoNota = new Formula(nota, paisElejido);
+                calculoNota.crearFormula();
+            }
+        }
         System.out.println(calculoNota.getResultado());
     }
 
     public double getNota() {
         return nota;
+    }
+
+    public Pais getPaisElejido() {
+        return paisElejido;
     }
 }
