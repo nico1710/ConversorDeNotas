@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class Formula_test {
-
+    //test para obtener el primer parametro del enum de un Pais
     @Test
     public void objeto_formula_test() {
         double nota = 3.5;
@@ -14,6 +14,7 @@ public class Formula_test {
         Assertions.assertEquals(control, obtenido);
     }
 
+    //test que convierte nota de cualquier pais a nota CHILENA
     @Test
     public void obtener_notaChilena() {
         double notaArgentina = 10;
@@ -25,6 +26,37 @@ public class Formula_test {
         double obtenido = formulaChilena.getResultado();
 
         Assertions.assertEquals(control, obtenido);
+    }
+
+    //test para covertir nota chilena a cualquier pais
+    @Test
+    public void convertir_notaChilena_otro_pais() {
+        double notaChilena = 7.0, control, obtenido;
+        Pais paisElegido = Pais.BRASIL;
+        Formula formula = new Formula(notaChilena, paisElegido);
+        formula.crearFormula();
+
+        control = 10;
+        obtenido = formula.getResultado();
+
+        Assertions.assertEquals(control, obtenido);
+    }
+
+    //test para convertir nota a cualquier pais, en este caso nota PERUANA A BOLIVIANA
+    @Test
+    public void convertir_nota_cualquierPais() {
+        double notaPeruana = 20, control, obtenido;
+        Pais paisOrigen = Pais.PERU;
+        Pais paisElegido = Pais.BOLIVIA;
+
+        Formula formula = new Formula(notaPeruana, paisOrigen, paisElegido);
+        formula.crearFormulaCompleta();
+
+        control = 100; //nota boliviana
+        obtenido = formula.getResultado();
+
+        Assertions.assertEquals(control, obtenido);
+
     }
 
 }

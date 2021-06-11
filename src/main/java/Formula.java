@@ -3,6 +3,8 @@ public class Formula {
     private double nota;
     private int num1;
     private double denominador;
+    private int numPaisDestino;
+    private int denominadorPaisDestino;
     private double resultado;
     private Pais pais;
 
@@ -10,6 +12,14 @@ public class Formula {
         this.nota = nota;
         this.num1 = pais.getNumeroFormula();
         this.denominador = pais.getDividendo();
+    }
+
+    public Formula(double nota, Pais paisOrigen, Pais paisDestino) {
+        this.nota = nota;
+        this.num1 = paisOrigen.getNumeroFormula();
+        this.denominador = paisOrigen.getDividendo();
+        this.numPaisDestino = paisDestino.getNumeroFormula();
+        this.denominadorPaisDestino = paisDestino.getDividendo();
     }
 
     //obtener la nota que se ingresa por consola
@@ -27,6 +37,12 @@ public class Formula {
     //se crea la formula de nota Pais origen a Chilena
     public void crearFormulaPaisOrigenAChilena() {
         resultado = (((nota - num1) * 3) / denominador) + 4;
+    }
+
+    //se crear la formula a partir del PaisOrigen a nota Chilena y la nota chilena la usamos para el pais de Destin
+    public void crearFormulaCompleta() {
+        double notaChilena = (((nota - num1) * 3) / denominador) + 4;
+        resultado =  ((denominadorPaisDestino * (notaChilena - 4)) / 3) + numPaisDestino ;
     }
 
     public double getResultado() {
