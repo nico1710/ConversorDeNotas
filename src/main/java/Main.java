@@ -24,16 +24,15 @@ public class Main {
 
                 menuPrincipal.mostrarResultado();
 
-            }catch (InputMismatchException in) {
-                System.out.println("ERROR | No puede ingresar letras o caracteres!!!\n");
-                teclado.next();
-            }finally {
                 System.out.println("Desea calcular otra nota: ");
                 System.out.println("1. Convertir otra nota");
                 System.out.println("2. Salir");
                 repetirConversion = teclado.nextInt();
-            }
 
+            }catch (InputMismatchException in) {
+                System.out.println("ERROR | No puede ingresar letras o caracteres!!!\n");
+                teclado.next();
+            }
         }while(repetirConversion < 2);
     }
 
