@@ -42,6 +42,19 @@ public class Formula_test {
         Assertions.assertEquals(control, obtenido);
     }
 
+    @Test
+    public void convertir_notaChilena_otro_pais2() {
+        double notaChilena = 7.0, control, obtenido;
+        Pais paisElegido = Pais.PERU;
+        Formula formula = new Formula(notaChilena, paisElegido);
+        formula.crearFormula();
+
+        control = 20;
+        obtenido = formula.getResultado();
+
+        Assertions.assertEquals(control, obtenido);
+    }
+
     //test para convertir nota a cualquier pais, en este caso nota PERUANA A BOLIVIANA
     @Test
     public void convertir_nota_cualquierPais() {
@@ -53,6 +66,22 @@ public class Formula_test {
         formula.crearFormulaCompleta();
 
         control = 100; //nota boliviana
+        obtenido = formula.getResultado();
+
+        Assertions.assertEquals(control, obtenido);
+
+    }
+
+    @Test
+    public void convertir_nota_cualquierPais2() {
+        double notaPeruana = 10, control, obtenido;
+        Pais paisOrigen = Pais.ARGENTINA;
+        Pais paisElegido = Pais.BRASIL;
+
+        Formula formula = new Formula(notaPeruana, paisOrigen, paisElegido);
+        formula.crearFormulaCompleta();
+
+        control = 10; //nota boliviana
         obtenido = formula.getResultado();
 
         Assertions.assertEquals(control, obtenido);
