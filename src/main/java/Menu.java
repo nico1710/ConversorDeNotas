@@ -12,7 +12,7 @@ public class Menu {
     public void ingresarNota() {
         Scanner teclado = new Scanner(System.in);
         do {
-            System.out.println("Ingrese Nota de " + paisOrigen.getNombrePais() + ": ");
+            System.out.println("Ingresa Nota de " + paisOrigen.getNombrePais() + ": ");
             this.nota = teclado.nextDouble();
         }while(nota < paisOrigen.getNotaMinima() || nota > paisOrigen.getNotaMaxima());
     }
