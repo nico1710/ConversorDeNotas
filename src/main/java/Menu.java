@@ -1,7 +1,10 @@
+import org.apache.log4j.Logger;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
+    public static Logger log = Logger.getLogger(Menu.class);
     private double nota;
     private Pais paisElegido;
     private Pais paisOrigen;
@@ -46,6 +49,7 @@ public class Menu {
                 paisOrigen = Pais.BOLIVIA;
                 break;
         }
+        log.info("Pais Origen: " + paisOrigen);
     }
 
     public void setPaisElegido(int opcion) {
@@ -69,6 +73,7 @@ public class Menu {
                 paisElegido = Pais.BOLIVIA;
                 break;
         }
+        log.info("Pais Destino: " + paisElegido);
     }
 
     public void mostrarResultado() {

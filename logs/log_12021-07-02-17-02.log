@@ -1,0 +1,18 @@
+[07-02 17:02] [INFO] [Formula_test:14] [init] TEST Iniciados
+[07-02 17:02] [INFO] [Formula:50] [crearFormulaCompleta] Formula Creada
+[07-02 17:02] [INFO] [Formula:52] [crearFormulaCompleta] ((5 * (10.0 - 4) / 3) + 6
+[07-02 17:02] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: convertir_nota_cualquierPais2()
+[07-02 17:02] [INFO] [Formula:43] [crearFormulaPaisOrigenAChilena] Formula Creada
+[07-02 17:02] [INFO] [Formula:44] [crearFormulaPaisOrigenAChilena] (((10.0 - 6) * 3) / 4.0) + 4)
+[07-02 17:02] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: obtener_notaChilena()
+[07-02 17:02] [INFO] [Formula:50] [crearFormulaCompleta] Formula Creada
+[07-02 17:02] [INFO] [Formula:52] [crearFormulaCompleta] ((50 * (20.0 - 4) / 3) + 11
+[07-02 17:02] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: convertir_nota_cualquierPais()
+[07-02 17:02] [INFO] [Formula:36] [crearFormula] Formula Creada
+[07-02 17:02] [INFO] [Formula:37] [crearFormula] (9.0 * (7.0 - 4) / 3) + 11
+[07-02 17:02] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: convertir_notaChilena_otro_pais2()
+[07-02 17:02] [ERROR] [MyTestWatcher:29] [testFailed] Test Iconrrecto: objeto_formula_test() org.opentest4j.AssertionFailedError: expected: <5> but was: <6>
+[07-02 17:02] [INFO] [Formula:36] [crearFormula] Formula Creada
+[07-02 17:02] [INFO] [Formula:37] [crearFormula] (5.0 * (7.0 - 4) / 3) + 5
+[07-02 17:02] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: convertir_notaChilena_otro_pais()
+[07-02 17:02] [INFO] [Formula_test:18] [afterAll] TEST Terminados

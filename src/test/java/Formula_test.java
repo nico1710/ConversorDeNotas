@@ -1,13 +1,28 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.apache.log4j.Logger;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+@ExtendWith(MyTestWatcher.class)
 public class Formula_test {
+    public static Logger log = Logger.getLogger(Formula_test.class);
+
+    @BeforeAll
+    public static void init() {
+        log.info("TEST Iniciados");
+    }
+
+    @AfterAll
+    public static void afterAll() { log.info("TEST Terminados"); }
+
+    @BeforeEach
+    public void nuevoTest() { log.info("Nuevo Test"); }
+
     //test para obtener el primer parametro del enum de un Pais
     @Test
-    public void objeto_formula_test() {
+    public void objeto_formula_test() throws Exception{
         double nota = 3.5;
         Pais paisElejido = Pais.ARGENTINA;
-        int control = 6;
+        int control = 5;
         Formula formulaArgentina = new Formula(nota, paisElejido);
         int obtenido = formulaArgentina.getNum();
 

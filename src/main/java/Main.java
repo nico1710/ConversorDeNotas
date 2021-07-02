@@ -1,6 +1,10 @@
+import org.apache.log4j.Logger;
+
 import java.util.*;
 
 public class Main {
+    final static Logger log = Logger.getLogger(Main.class);
+
     public static void main(String[] args){
         int paisSeleccionado, paisOrigen, repetirConversion = 0;
 
@@ -8,6 +12,7 @@ public class Main {
         Menu menuPrincipal = new Menu();
 
         do{
+            log.debug("Programa Iniciado");
             try {
                 System.out.println("-- CONVERSOR DE NOTAS 1.1 --");
                 System.out.println("Ingrese Pais de origen: ");
@@ -30,10 +35,11 @@ public class Main {
                 repetirConversion = teclado.nextInt();
 
             }catch (InputMismatchException in) {
+                log.error("ERROR | No puede ingresar letras o caracteres!!!");
                 System.out.println("ERROR | No puede ingresar letras o caracteres!!!\n");
                 teclado.next();
             }
         }while(repetirConversion < 2);
-    }
+        log.info("Programa Terminado");    }
 
 }
