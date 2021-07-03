@@ -1,0 +1,24 @@
+[07-03 17:32] [INFO] [Formula_test:37] [init] TEST Iniciados
+[07-03 17:32] [INFO] [Formula_test:46] [nuevoTest] Nuevo Test
+[07-03 17:32] [INFO] [Formula:50] [crearFormulaCompleta] Formula Creada
+[07-03 17:32] [INFO] [Formula:52] [crearFormulaCompleta] ((5 * (10.0 - 4) / 3) + 6
+[07-03 17:32] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: convertir_nota_cualquierPais2()
+[07-03 17:32] [INFO] [Formula_test:46] [nuevoTest] Nuevo Test
+[07-03 17:32] [INFO] [Formula:43] [crearFormulaPaisOrigenAChilena] Formula Creada
+[07-03 17:32] [INFO] [Formula:44] [crearFormulaPaisOrigenAChilena] (((10.0 - 6) * 3) / 4.0) + 4)
+[07-03 17:32] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: obtener_notaChilena()
+[07-03 17:32] [INFO] [Formula_test:46] [nuevoTest] Nuevo Test
+[07-03 17:32] [INFO] [Formula:50] [crearFormulaCompleta] Formula Creada
+[07-03 17:32] [INFO] [Formula:52] [crearFormulaCompleta] ((50 * (20.0 - 4) / 3) + 11
+[07-03 17:32] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: convertir_nota_cualquierPais()
+[07-03 17:32] [INFO] [Formula_test:46] [nuevoTest] Nuevo Test
+[07-03 17:32] [INFO] [Formula:36] [crearFormula] Formula Creada
+[07-03 17:32] [INFO] [Formula:37] [crearFormula] (9.0 * (7.0 - 4) / 3) + 11
+[07-03 17:32] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: convertir_notaChilena_otro_pais2()
+[07-03 17:32] [INFO] [Formula_test:46] [nuevoTest] Nuevo Test
+[07-03 17:32] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: objeto_formula_test()
+[07-03 17:32] [INFO] [Formula_test:46] [nuevoTest] Nuevo Test
+[07-03 17:32] [INFO] [Formula:36] [crearFormula] Formula Creada
+[07-03 17:32] [INFO] [Formula:37] [crearFormula] (5.0 * (7.0 - 4) / 3) + 5
+[07-03 17:32] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: convertir_notaChilena_otro_pais()
+[07-03 17:32] [INFO] [Formula_test:42] [afterAll] TEST Terminados

@@ -21,6 +21,7 @@ public class MyTestWatcher implements TestWatcher{
     @Override
     public void testAborted(ExtensionContext context, Throwable cause) {
         TestWatcher.super.testAborted(context, cause);
+        log.warn("Test Ignorado: " + context.getDisplayName() + " " + cause);
     }
 
     @Override

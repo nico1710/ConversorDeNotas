@@ -2,17 +2,45 @@ import org.apache.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Stream;
+
 @ExtendWith(MyTestWatcher.class)
 public class Formula_test {
     public static Logger log = Logger.getLogger(Formula_test.class);
+    final static String direccion = "C:\\Users\\Nicolas\\IdeaProjects\\ConversorDeNotas\\logs";
 
     @BeforeAll
-    public static void init() {
+    public static void init() throws IOException {
+        AtomicInteger count = new AtomicInteger();
+        try (Stream<Path> paths = Files.walk(Paths.get(direccion))){
+            Files.walk(Paths.get(direccion)).forEach(ruta -> {
+                if(Files.isRegularFile(ruta)) {
+                    if(count.get() == 0) {
+                        File file = new File(ruta.toString());
+                        if(file.delete()) {
+                            System.out.println("Log Eliminado");
+                        }else{
+                            System.out.println("Log no eliminado");
+                        }
+                        count.getAndIncrement();
+                    }
+                }
+            });
+        }
+
         log.info("TEST Iniciados");
     }
 
     @AfterAll
-    public static void afterAll() { log.info("TEST Terminados"); }
+    public static void afterAll() {
+        log.info("TEST Terminados");
+    }
 
     @BeforeEach
     public void nuevoTest() { log.info("Nuevo Test"); }
@@ -22,7 +50,7 @@ public class Formula_test {
     public void objeto_formula_test() throws Exception{
         double nota = 3.5;
         Pais paisElejido = Pais.ARGENTINA;
-        int control = 5;
+        int control = 6;
         Formula formulaArgentina = new Formula(nota, paisElejido);
         int obtenido = formulaArgentina.getNum();
 

@@ -1,5 +1,0 @@
-[07-02 19:58] [INFO] [Menu_test:12] [init] TEST Iniciados
-[07-02 19:58] [INFO] [Menu_test:19] [nuevoTest] Nuevo Test
-[07-02 19:58] [INFO] [Menu:76] [setPaisElegido] Pais Destino: ARGENTINA
-[07-02 19:58] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: verificar_pais_elegido_test()
-[07-02 19:58] [INFO] [Menu_test:16] [afterAll] TEST Terminados

@@ -2,13 +2,39 @@ import org.apache.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Stream;
+
 @ExtendWith(MyTestWatcher.class)
 public class Menu_test {
     private Menu menu = new Menu();
     public static Logger log = Logger.getLogger(Menu_test.class);
+    final static String direccion = "C:\\Users\\Nicolas\\IdeaProjects\\ConversorDeNotas\\logs";
 
     @BeforeAll
-    public static void init() {
+    public static void init() throws IOException {
+        AtomicInteger count = new AtomicInteger();
+        try (Stream<Path> paths = Files.walk(Paths.get(direccion))){
+            Files.walk(Paths.get(direccion)).forEach(ruta -> {
+                if(Files.isRegularFile(ruta)) {
+                    if(count.get() == 0) {
+                        File file = new File(ruta.toString());
+                        if(file.delete()) {
+                            System.out.println("Log Eliminado");
+                        }else{
+                            System.out.println("Log no eliminado");
+                        }
+                        count.getAndIncrement();
+                    }
+                }
+            });
+        }
+
         log.info("TEST Iniciados");
     }
 
