@@ -1,9 +1,17 @@
 import org.apache.log4j.Logger;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Stream;
 
 public class Main {
     final static Logger log = Logger.getLogger(Main.class);
+    final static String direccion = "C:\\Users\\Nicolas\\IdeaProjects\\ConversorDeNotas\\logs";
 
     public static void main(String[] args) {
 
@@ -34,15 +42,39 @@ public class Main {
                 System.out.println("1. Convertir otra nota");
                 System.out.println("2. Salir");
                 repetirConversion = teclado.nextInt();
+                deleteLog();
 
             }catch (InputMismatchException in) {
                 log.error("ERROR | No puede ingresar letras o caracteres!!!");
                 System.out.println("ERROR | No puede ingresar letras o caracteres!!!\n");
                 teclado.next();
+            }catch (IOException e) {
+                log.error("ERROR AL ELIMINAR LOG");
+                System.out.println("ERROR AL ELIMINAR LOG");
             }
         }while(repetirConversion < 2);
+
         log.info("Programa Terminado");
 
+    }
+
+    public static void deleteLog() throws IOException{
+        AtomicInteger count = new AtomicInteger();
+        try (Stream<Path> paths = Files.walk(Paths.get(direccion))){
+            Files.walk(Paths.get(direccion)).forEach(ruta -> {
+                if(Files.isRegularFile(ruta)) {
+                    if(count.get() == 0) {
+                        File file = new File(ruta.toString());
+                        if(file.delete()) {
+                            System.out.println("Log Eliminado");
+                        }else{
+                            System.out.println("Log no eliminado");
+                        }
+                        count.getAndIncrement();
+                    }
+                }
+            });
+        }
     }
 
 }

@@ -1,0 +1,6 @@
+[07-04 16:06] [DEBUG] [Main:16] [main] Programa Iniciado
+[07-04 16:06] [INFO] [Menu:52] [setPaisOrigen] Pais Origen: CHILE
+[07-04 16:06] [INFO] [Menu:76] [setPaisElegido] Pais Destino: ARGENTINA
+[07-04 16:06] [INFO] [Formula:36] [crearFormula] Formula Creada
+[07-04 16:06] [INFO] [Formula:37] [crearFormula] (4.0 * (7.0 - 4) / 3) + 6
+[07-04 16:06] [INFO] [Main:44] [main] Programa Terminado

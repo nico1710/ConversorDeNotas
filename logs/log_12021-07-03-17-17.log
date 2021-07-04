@@ -1,9 +1,0 @@
-[07-03 17:17] [INFO] [Menu_test:38] [init] TEST Iniciados
-[07-03 17:17] [INFO] [Menu_test:45] [nuevoTest] Nuevo Test
-[07-03 17:17] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: ingresar_nota_test()
-[07-03 17:17] [INFO] [Menu_test:45] [nuevoTest] Nuevo Test
-[07-03 17:17] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: ingresar_nota_test2()
-[07-03 17:17] [INFO] [Menu_test:45] [nuevoTest] Nuevo Test
-[07-03 17:17] [INFO] [Menu:76] [setPaisElegido] Pais Destino: ARGENTINA
-[07-03 17:17] [INFO] [MyTestWatcher:18] [testSuccessful] Test Correcto: verificar_pais_elegido_test()
-[07-03 17:17] [INFO] [Menu_test:42] [afterAll] TEST Terminados
