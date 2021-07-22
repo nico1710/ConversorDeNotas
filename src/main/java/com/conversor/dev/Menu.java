@@ -1,6 +1,7 @@
+package com.conversor.dev;
+
 import org.apache.log4j.Logger;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -29,51 +30,26 @@ public class Menu {
     }
 
     public void setPaisOrigen(int opcion) {
-        switch (opcion) {
-            case 1:
-                paisOrigen = Pais.CHILE;
+        int contador = 1;
+        for(Pais pais : Pais.values()) {
+            if(opcion == contador) {
+                paisOrigen = pais;
                 break;
-            case 2:
-                paisOrigen = Pais.ARGENTINA;
-                break;
-            case 3:
-                paisOrigen = Pais.PERU;
-                break;
-            case 4:
-                paisOrigen = Pais.BRASIL;
-                break;
-            case 5:
-                paisOrigen = Pais.ECUADOR;
-                break;
-            case 6:
-                paisOrigen = Pais.BOLIVIA;
-                break;
+            }
+            contador++;
         }
-        log.info("Pais Origen: " + paisOrigen);
+        log.info("com.conversor.dev.Pais Origen: " + paisOrigen);
     }
 
     public void setPaisElegido(int opcion) {
-        switch (opcion) {
-            case 1:
-                paisElegido = Pais.CHILE;
+        int contador = 1;
+        for(Pais pais : Pais.values()) {
+            if(opcion == contador) {
+                paisElegido = pais;
                 break;
-            case 2:
-                paisElegido = Pais.ARGENTINA;
-                break;
-            case 3:
-                paisElegido = Pais.PERU;
-                break;
-            case 4:
-                paisElegido = Pais.BRASIL;
-                break;
-            case 5:
-                paisElegido = Pais.ECUADOR;
-                break;
-            case 6:
-                paisElegido = Pais.BOLIVIA;
-                break;
+            }
         }
-        log.info("Pais Destino: " + paisElegido);
+        log.info("com.conversor.dev.Pais Destino: " + paisElegido);
     }
 
     public void mostrarResultado() {

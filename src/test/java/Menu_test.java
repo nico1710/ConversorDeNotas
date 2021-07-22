@@ -1,3 +1,5 @@
+import com.conversor.dev.Menu;
+import com.conversor.dev.Pais;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;

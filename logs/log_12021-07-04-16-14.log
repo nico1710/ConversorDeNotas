@@ -1,5 +1,5 @@
-[07-04 16:14] [DEBUG] [Main:24] [main] Programa Iniciado
-[07-04 16:14] [INFO] [Menu:52] [setPaisOrigen] Pais Origen: CHILE
-[07-04 16:14] [ERROR] [Main:48] [main] ERROR | No puede ingresar letras o caracteres!!!
-[07-04 16:14] [DEBUG] [Main:24] [main] Programa Iniciado
-[07-04 16:14] [INFO] [Menu:52] [setPaisOrigen] Pais Origen: ARGENTINA
+[07-04 16:14] [DEBUG] [com.conversor.dev.Main:24] [main] Programa Iniciado
+[07-04 16:14] [INFO] [com.conversor.dev.Menu:52] [setPaisOrigen] com.conversor.dev.Pais Origen: CHILE
+[07-04 16:14] [ERROR] [com.conversor.dev.Main:48] [main] ERROR | No puede ingresar letras o caracteres!!!
+[07-04 16:14] [DEBUG] [com.conversor.dev.Main:24] [main] Programa Iniciado
+[07-04 16:14] [INFO] [com.conversor.dev.Menu:52] [setPaisOrigen] com.conversor.dev.Pais Origen: ARGENTINA

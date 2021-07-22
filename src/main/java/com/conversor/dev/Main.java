@@ -1,3 +1,5 @@
+package com.conversor.dev;
+
 import org.apache.log4j.Logger;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -24,14 +26,14 @@ public class Main {
             log.debug("Programa Iniciado");
             try {
                 System.out.println("-- CONVERSOR DE NOTAS 1.1 --");
-                System.out.println("Ingrese Pais de origen: ");
+                System.out.println("Ingrese com.conversor.dev.Pais de origen: ");
                 menuPrincipal.seleccionPais();
                 paisOrigen = teclado.nextInt();
                 menuPrincipal.setPaisOrigen(paisOrigen);
 
                 menuPrincipal.ingresarNota();
 
-                System.out.println("Ingrese Pais al que dease convertir la nota: ");
+                System.out.println("Ingrese com.conversor.dev.Pais al que dease convertir la nota: ");
                 menuPrincipal.seleccionPais();
                 paisSeleccionado = teclado.nextInt();
                 menuPrincipal.setPaisElegido(paisSeleccionado);

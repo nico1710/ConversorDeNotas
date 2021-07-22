@@ -1,3 +1,5 @@
+import com.conversor.dev.Formula;
+import com.conversor.dev.Pais;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -45,7 +47,7 @@ public class Formula_test {
     @BeforeEach
     public void nuevoTest() { log.info("Nuevo Test"); }
 
-    //test para obtener el primer parametro del enum de un Pais
+    //test para obtener el primer parametro del enum de un com.conversor.dev.Pais
     @Test
     public void objeto_formula_test() throws Exception{
         double nota = 3.5;

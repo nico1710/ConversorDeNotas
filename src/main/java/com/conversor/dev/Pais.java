@@ -1,3 +1,11 @@
+package com.conversor.dev;
+
+/** Representa los paises disponibles para elegir
+ * @author Nicolas Pereira
+ * @version 3.0
+ * @since 2021-07-14
+ */
+
 public enum Pais {
     CHILE("Chile", 0, 0, 1, 7),
     ARGENTINA("Argentina", 6, 4,1, 10),
