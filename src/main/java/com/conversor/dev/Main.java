@@ -11,10 +11,27 @@ import java.nio.file.Paths;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
+/**
+ * Clase donde se ejcuta el programa
+ * @author Nicolas Pereira
+ * @version 3.0
+ * @since 2021-07-23
+ */
 public class Main {
     final static Logger log = Logger.getLogger(Main.class);
     final static String direccion = "C:\\Users\\Nicolas\\IdeaProjects\\ConversorDeNotas\\logs";
 
+    /**
+     * Metodo principal de la clase Main
+     * @param args String[] argumentos del main
+     * @see Scanner para interactuar con el usuario
+     * @see Menu para instanciar un objeto de tipo menu
+     * @see Menu#seleccionPais() selecciona el pais de la lista de paises
+     * @see Menu#setPaisOrigen(int) seteamos el pais de origen con la eleccion del usuario
+     * @see Menu#ingresarNota() ingresamos la nota del usuario
+     * @see Menu#setPaisElegido(int) seteamos el pais elegido con la eleccion del usuario
+     * @see Menu#mostrarResultado() mostrar el resultado de la conversion
+     */
     public static void main(String[] args) {
 
         int paisSeleccionado, paisOrigen, repetirConversion = 0;
@@ -60,6 +77,10 @@ public class Main {
 
     }
 
+    /**
+     * Funcion para eliminar logs antiguos
+     * @throws IOException caso de que exista error al encontrar el path
+     */
     public static void deleteLog() throws IOException{
         AtomicInteger count = new AtomicInteger();
         try (Stream<Path> paths = Files.walk(Paths.get(direccion))){
